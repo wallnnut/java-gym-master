@@ -1,15 +1,7 @@
-package ru.yandex.practicum.gym.test;
+package ru.yandex.practicum.gym;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import ru.yandex.practicum.gym.Age;
-import ru.yandex.practicum.gym.Coach;
-import ru.yandex.practicum.gym.DayOfWeek;
-import ru.yandex.practicum.gym.Group;
-import ru.yandex.practicum.gym.TimeOfDay;
-import ru.yandex.practicum.gym.Timetable;
-import ru.yandex.practicum.gym.TrainingSession;
 
 import java.util.List;
 
