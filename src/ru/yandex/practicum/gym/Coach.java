@@ -4,14 +4,14 @@ import java.util.Objects;
 
 public class Coach {
 
-    //фамилия
-    private String surname;
-    //имя
-    private String name;
-    //отчество
-    private String middleName;
+    private final String surname;
+    private final String name;
+    private final String middleName;
 
     public Coach(String surname, String name, String middleName) {
+        if (surname == null || name == null || middleName == null) {
+            throw new IllegalArgumentException("Coach name parts cannot be null");
+        }
         this.surname = surname;
         this.name = name;
         this.middleName = middleName;
@@ -19,15 +19,22 @@ public class Coach {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         Coach coach = (Coach) o;
-        return Objects.equals(surname, coach.surname) && Objects.equals(name, coach.name) && Objects.equals(middleName, coach.middleName);
+        return Objects.equals(surname, coach.surname) && Objects.equals(name, coach.name)
+                && Objects.equals(middleName, coach.middleName);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(surname, name, middleName);
+    }
+
+    public String getFullName() {
+        return surname + " " + name + " " + middleName;
     }
 
     public String getSurname() {
